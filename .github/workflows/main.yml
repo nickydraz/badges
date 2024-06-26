@@ -1,0 +1,19 @@
+name: Update badges
+
+on:
+  ## Manual runs
+  workflow_dispatch:
+
+  ## Scheduled runs
+  schedule:
+    # Runs at 2am UTC
+    - cron: "0 2 * * *"
+jobs:
+  update-readme:
+    name: Update Readme with badges
+    runs-on: ubuntu-latest
+    steps:
+      - name: Badges - Readme
+        uses: pemtajo/badge-readme@main
+        with:       
+          CREDLY_USER: nickydraz
